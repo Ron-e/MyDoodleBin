@@ -18,7 +18,6 @@ echo "BEGIN: Checking for domains without dns records...";
 $alldomains = $zdbh->query("SELECT vh_name_vc  FROM x_vhosts WHERE vh_type_in IS '1'");
 foreach ($alldomains as &$domain) {
     $result = mysql_query("SELECT dn_name_vc  FROM x_dns WHERE dn_name_vc = '$domain'");
-	echo "Found ".mysql_num_rows($result)." records of domains without dns record.";
 	if(mysql_num_rows($result) == 0) {
 		echo "creating dns record for domain: ".$domainID;
 		doCreateDefaultRecords($domainID);
