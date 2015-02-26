@@ -37,24 +37,24 @@ while true; do
 	exit 1
 	fi 
 done
-	
-if [[ "$THEME_UPDATE" = "1"]]; then
+
+if [[ "$THEME_UPDATE" = "1" ]]; then
 	echo "Updating the $THEME_NAME theme..."
 else
 	echo "Installing the $THEME_NAME theme..."
 fi
 
-if [[ "$THEME_GITHUB" = "1"]]; then
+if [[ "$THEME_GITHUB" = "1" ]]; then
 	unzip -q $THEME_NAME.zip
 	rm -f $THEME_NAME.zip
 	
-	if [[ "$THEME_UPDATE" = "1"]]; then
+	if [[ "$THEME_UPDATE" = "1" ]]; then
 		rm "$THEME_NAME"
 	fi
 	
 	mv $THEME_NAME-master $THEME_NAME
 else
-	if [[ "$THEME_UPDATE" = "1"]]; then
+	if [[ "$THEME_UPDATE" = "1" ]]; then
 		rm "$THEME_NAME"
 	fi
 	
