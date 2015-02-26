@@ -63,7 +63,7 @@ else
 fi
 
 echo "##########################################################################################"
-if [[ "$THEME_UPDATE" = "1"]]; then
+if [[ "$THEME_UPDATE" = "1" ]]; then
 	echo " Congratulations the $THEME_NAME theme for Sentora has now been updated on your server."
 else
 	echo " Congratulations the $THEME_NAME theme for Sentora has now been installed on your server."
