@@ -4,8 +4,7 @@ THEME_NAME=Zentora
 THEME_URL=https://github.com/auxio/Zentora/archive/master.zip
 THEME_GITHUB=1
 
-echo "###########################################################"
-echo "#     $THEME_NAME Theme installer/updater for Sentora     #" 
+echo "$THEME_NAME Theme installer/updater for Sentora     "
 echo "###########################################################"
 echo "#  THE SCRIPT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE  #" 
 echo "# USEFUL, IT IS PROVIDED 'AS IS' AND WITHOUT ANY WARRANTY #"
