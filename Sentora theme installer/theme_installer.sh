@@ -32,7 +32,7 @@ cd /etc/sentora/panel/etc/styles/
 
 echo "Downloading the $THEME_NAME theme..."
 while true; do
-	wget -nv -O $THEME_NAME.zip $THEME_URL
+	wget -nv -O -q $THEME_NAME.zip $THEME_URL
 	if [[ -f $THEME_NAME.zip ]]; then
 		break;
 	else
