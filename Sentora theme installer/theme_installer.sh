@@ -12,13 +12,12 @@ echo "# USEFUL, IT IS PROVIDED 'AS IS' AND WITHOUT ANY WARRANTY #"
 echo "###########################################################"
 	
 while true; do
-        read -e -p "Do you want to install/update the $THEME_NAME theme for Sentora (y/n)? " yn
-        case $yn in
-            [Yy]* ) break;;
-            [Nn]* ) exit;
-        esac
-    done
-fi	
+	read -e -p "Do you want to install/update the $THEME_NAME theme for Sentora (y/n)? " yn
+	case $yn in
+		[Yy]* ) break;;
+		[Nn]* ) exit;
+	esac
+done
 	
 
 if [ -d "/etc/sentora/panel/etc/styles/$THEME_NAME" ]; then
