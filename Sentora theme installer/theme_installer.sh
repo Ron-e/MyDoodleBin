@@ -11,11 +11,15 @@ echo "#  THE SCRIPT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE  #"
 echo "# USEFUL, IT IS PROVIDED 'AS IS' AND WITHOUT ANY WARRANTY #"
 echo "###########################################################"
 	
-read -e -p "Do you want to install/update the $THEME_NAME theme for Sentora (y/n)? " yn
-case $yn in
-	[Yy]* ) break;;
-	[Nn]* ) exit;;
-esac
+while true; do
+        read -e -p "Do you want to install/update the $THEME_NAME theme for Sentora (y/n)? " yn
+        case $yn in
+            [Yy]* ) break;;
+            [Nn]* ) exit;
+        esac
+    done
+fi	
+	
 
 if [ -d "/etc/sentora/panel/etc/styles/$THEME_NAME" ]; then
 	THEME_UPDATE=1
@@ -52,7 +56,7 @@ if [[ "$THEME_GITHUB" = "1" ]]; then
 		rm "$THEME_NAME"
 	fi
 	
-	mv -u -y $THEME_NAME-master $THEME_NAME
+	mv -u -f $THEME_NAME-master $THEME_NAME
 else
 	if [[ "$THEME_UPDATE" = "1" ]]; then
 		rm "$THEME_NAME"
