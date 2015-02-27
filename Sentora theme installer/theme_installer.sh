@@ -54,7 +54,7 @@ if [[ "$THEME_GITHUB" = "1" ]]; then
 		rm "$THEME_NAME"
 	fi
 	
-	mv -uf $THEME_NAME-master $THEME_NAME
+	mv -u -f $THEME_NAME-master $THEME_NAME
 else
 	if [[ "$THEME_UPDATE" = "1" ]]; then
 		rm -rf "$THEME_NAME"
