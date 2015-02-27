@@ -51,13 +51,13 @@ if [[ "$THEME_GITHUB" = "1" ]]; then
 	rm -f $THEME_NAME.zip
 	
 	if [[ "$THEME_UPDATE" = "1" ]]; then
-		rm -rf $THEME_NAME
+		rm -rf /etc/sentora/panel/etc/styles/$THEME_NAME
 	fi
 	
 	mv -u -f $THEME_NAME-master $THEME_NAME
 else
 	if [[ "$THEME_UPDATE" = "1" ]]; then
-		rm -rf $THEME_NAME
+		rm -rf /etc/sentora/panel/etc/styles/$THEME_NAME
 	fi
 	
 	unzip -q $THEME_NAME.zip
