@@ -18,6 +18,27 @@ echo "###########################################################"
 #	esac
 #done
 	
+echo "Checking if the OS is compatible with this installer/updater..."
+
+if [ -f /etc/centos-release ]; then
+    OS="CentOs"
+    VERFULL=$(sed 's/^.*release //;s/ (Fin.*$//' /etc/centos-release)
+    VER=${VERFULL:0:1} # return 6 or 7
+elif [ -f /etc/lsb-release ]; then
+    OS=$(grep DISTRIB_ID /etc/lsb-release | sed 's/^.*=//')
+    VER=$(grep DISTRIB_RELEASE /etc/lsb-release | sed 's/^.*=//')
+else
+    OS=$(uname -s)
+    VER=$(uname -r)
+fi
+
+if [[ "$OS" = "CentOs" && ("$VER" = "6" || "$VER" = "7" ) || 
+      "$OS" = "Ubuntu" && ("$VER" = "12.04" || "$VER" = "14.04" ) ]] ; then 
+    echo "This OS is supported by Sentora and this thme installer."
+else
+	echo "Sorry, this OS is not supported by Sentora and this thme installer." 
+    exit 1
+fi
 
 if [ -d "/etc/sentora/panel/etc/styles/$THEME_NAME" ]; then
 	THEME_UPDATE=1
@@ -56,6 +77,7 @@ if [[ "$THEME_GITHUB" = "1" ]]; then
 	
 	mv -u -f $THEME_NAME-master $THEME_NAME
 else
+	#this part is not jet tested!!!!
 	if [[ "$THEME_UPDATE" = "1" ]]; then
 		rm -rf /etc/sentora/panel/etc/styles/$THEME_NAME
 	fi
