@@ -1,5 +1,5 @@
 #remove services before installing Sentora
-A couple of lines i use before installing Sentora on CentOS 6/7...
+A couple of lines i use before installing Sentora on CentOS 6/7, and should be working un ubuntu 12/14...
 This one is tested! :-D
 
 # MyDoodleBin
